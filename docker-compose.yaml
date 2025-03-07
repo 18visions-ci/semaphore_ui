@@ -21,7 +21,8 @@ services:
       - semaphore-net
     volumes:
       - semaphore-data:/etc/semaphore
-
+      - /home/nick/.ssh/ansible_automation_key:/home/semaphore/.ssh/ansible_automation_key:ro # adding ansible automation keys as a RO volume
+      - /home/nick/.ssh/ansible_automation_key.pub:/home/semaphore/.ssh/ansible_automation_key.pub:ro # adding ansible automation pub key as a RO volume
 volumes:
   semaphore-data:
 
